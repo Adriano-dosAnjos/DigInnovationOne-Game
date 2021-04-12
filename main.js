@@ -75,6 +75,14 @@ function iniciarJogo(){
     }else{
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
+        ponto();
+    }
+
+    function ponto(){
+        let pontos = document.createElement("pontos");
+        pontos++;
+        return pontos;
+        //console.log("pontos: " + pontos);
     }
 
     let newHead = {
