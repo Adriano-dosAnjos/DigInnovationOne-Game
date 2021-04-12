@@ -16,20 +16,20 @@ let food = {
 }
 
 function criarBG(){
-    context.fillStyle = "lightgreen";
+    context.fillStyle = "black";
     context.fillRect(0, 0, 16 * box, 16 * box);
 
 }
 
 function criarCobrinha(){
     for (i= 0; i < snake.length; i++){
-        context.fillStyle = "green";
+        context.fillStyle = "cyan";
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
 }
 
 function drawnFood(){
-    context.fillStyle = "red";
+    context.fillStyle = "magenta";
     context.fillRect(food.x, food.y, box, box);
 }
 
@@ -75,14 +75,7 @@ function iniciarJogo(){
     }else{
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
-        ponto();
-    }
-
-    function ponto(){
-        let pontos = document.createElement("pontos");
-        pontos++;
-        return pontos;
-        //console.log("pontos: " + pontos);
+        placar();
     }
 
     let newHead = {
@@ -96,3 +89,9 @@ function iniciarJogo(){
 
 let jogo = setInterval(iniciarJogo, 100);
 
+let pontos=0;
+function placar(){
+    pontos++;
+    document.getElementById("placarnatela").innerHTML = "pontos: 0" + pontos;
+    console.log(pontos);
+}
